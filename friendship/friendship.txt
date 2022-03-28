@@ -1,0 +1,15 @@
+SELECT * FROM users;
+INSERT INTO users (first_name, last_name) VALUE ("Amy", "Giver"), ("Eli", "Byers"), ("Marky", "Mark"), ("Big", "Bird") , ("Kermit", "The Frog"), ("Mary", "Morgan");
+
+SELECT * FROM friendships;
+INSERT INTO friendships (user_id, friend_id) VALUE (1, 2), (1,4), (1,6), (2, 1), (2,3), (2,5), (3, 2), (3, 5), (4,3), (5,1), (5,6) , (6,2), (6,3); 
+
+SELECT users.first_name, users.last_name, users2.first_name as friend_firstName, users2.last_name As friend_lastName from users join friendships on users.id = user_id join users as users2 on friend_id = users2.id; 
+
+SELECT concat(users2.first_name, ' ', users2.last_name) AS Friends_of_Amy FROM users JOIN friendships ON users.id = friendships.user_id JOIN users AS users2 ON friend_id = users2.id WHERE users.id =1;
+
+SELECT COUNT(*) from friendships;
+
+SELECT user_id, users.first_name, users.last_name, count(user_id) AS num_of_friends FROM friendships JOIN users ON users.id = friendships.user_id GROUP BY user_id ORDER BY num_of_friends DESC limit 2;
+
+SELECT concat(users2.first_name, ' ', users2.last_name) AS friends_of_Marky FROM users JOIN friendships ON users.id = friendships.user_id JOIN users AS users2 ON friendships.friend_id = users2.id WHERE user_id = 3 ORDER BY frieds_of_Marky ASC;

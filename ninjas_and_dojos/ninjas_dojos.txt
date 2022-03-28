@@ -1,0 +1,20 @@
+-- SHOW databases;
+-- USE dojo_and_ninjas_schema;
+-- SHOW tables;
+INSERT INTO dojos (name) VALUE ("Coding Dojo"), ("Cooking Dojo"), ("Craft Dojo");
+
+SELECT * FROM dojos;
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUE ("Matt", "Jones", 45, 1), ("Jill", "Hill", 19, 1), ("Zee", "Kilmar", 33, 1);
+
+SELECT * FROM ninjas;
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUE ("Eli", "chawaz", 40, 2), ("Alex", "Washburn", 23 , 2), ("kate", "Hill", 28, 2);
+
+INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUE ("Nancy", "Minroff", 21, 3), ("Moon", "Lu", 35 , 3), ("Rachel", "Thomas", 38, 3);
+
+SELECT * from ninjas join Dojos on dojo_id = dojos.id where dojos.id = 1;
+
+SELECT * from ninjas join Dojos on dojo_id = dojos.id where dojos.id = 3;
+
+SELECT first_name, dojos.name from ninjas join dojos on dojo_id = dojos.id where ninjas.id = 9; 

@@ -1,0 +1,15 @@
+INSERT INTO users ( first_name, last_name, email) VALUE ("Ari", "Hills", "yahoo@yahoo.com"), ("Mary", "Jones", "green@gmail.com"), ("Raj", "Yash", "yashraj@gmail.com");
+
+SELECT * FROM users;
+
+SELECT * FROM users where email LIKE "yahoo@yahoo.com";
+
+SELECT * FROM users where id = 3;
+
+UPDATE users set last_name = 'Pancakes' WHERE id = 3;
+
+DELETE FROM users WHERE id = 2;
+
+SELECT * from users ORDER BY first_name ASC;
+
+SELECT * from users ORDER BY first_name DESC;
