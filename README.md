@@ -1,5 +1,5 @@
 Snapshot of this repository? -->
-It is about MySQL queries and CURD oprations.
+It is about written MySQL queries to perform CURD oprations.
 
 
 What does it include/focus on? -->
